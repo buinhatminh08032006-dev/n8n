@@ -7,8 +7,9 @@ WORKDIR /data
 ENV N8N_HOST=0.0.0.0
 ENV GENERIC_TIMEZONE=Asia/Ho_Chi_Minh
 
-# Render sẽ cấp port qua biến $PORT
+# Render sẽ tự cấp PORT qua biến môi trường
 EXPOSE $PORT
 
-# Chạy n8n, bind đúng port Render cung cấp
+# Dùng $PORT thay vì port cứng
 CMD ["sh", "-c", "n8n start --port $PORT"]
+
